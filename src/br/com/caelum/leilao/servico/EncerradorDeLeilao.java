@@ -10,14 +10,20 @@ public class EncerradorDeLeilao {
 
 	private int total = 0;
 
+	private final LeilaoDao dao;
+	
+    public EncerradorDeLeilao(LeilaoDao dao) {
+        this.dao = dao;
+    }
+
 	public void encerra() {
-		LeilaoDao dao = new LeilaoDao();
+		
 		List<Leilao> todosLeiloesCorrentes = dao.correntes();
 
 		for (Leilao leilao : todosLeiloesCorrentes) {
 			if (comecouSemanaPassada(leilao)) {
-				leilao.encerra();
 				total++;
+				leilao.encerra();
 				dao.atualiza(leilao);
 			}
 		}
