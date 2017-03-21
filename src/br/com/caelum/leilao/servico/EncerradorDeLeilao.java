@@ -4,15 +4,15 @@ import java.util.Calendar;
 import java.util.List;
 
 import br.com.caelum.leilao.dominio.Leilao;
-import br.com.caelum.leilao.infra.dao.LeilaoDao;
+import br.com.caelum.leilao.repository.RepositorioDeLeiloes;
 
-public class EncerradorDeLeilao {
+public class EncerradorDeLeilao implements RepositorioDeLeiloes{
 
 	private int total = 0;
 
-	private final LeilaoDao dao;
+	private final RepositorioDeLeiloes dao;
 	
-    public EncerradorDeLeilao(LeilaoDao dao) {
+    public EncerradorDeLeilao(RepositorioDeLeiloes dao) {
         this.dao = dao;
     }
 
@@ -46,5 +46,37 @@ public class EncerradorDeLeilao {
 
 	public int getTotalEncerrados() {
 		return total;
+	}
+
+	/* (non-Javadoc)
+	 * @see br.com.caelum.leilao.repository.RepositorioDeLeiloes#salva(br.com.caelum.leilao.dominio.Leilao)
+	 */
+	public void salva(Leilao leilao) {
+		// TODO Auto-generated method stub
+		
+	}
+
+	/* (non-Javadoc)
+	 * @see br.com.caelum.leilao.repository.RepositorioDeLeiloes#encerrados()
+	 */
+	public List<Leilao> encerrados() {
+		// TODO Auto-generated method stub
+		return null;
+	}
+
+	/* (non-Javadoc)
+	 * @see br.com.caelum.leilao.repository.RepositorioDeLeiloes#correntes()
+	 */
+	public List<Leilao> correntes() {
+		// TODO Auto-generated method stub
+		return null;
+	}
+
+	/* (non-Javadoc)
+	 * @see br.com.caelum.leilao.repository.RepositorioDeLeiloes#atualiza(br.com.caelum.leilao.dominio.Leilao)
+	 */
+	public void atualiza(Leilao leilao) {
+		// TODO Auto-generated method stub
+		
 	}
 }
