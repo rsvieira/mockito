@@ -91,9 +91,6 @@ public class EncerradorDeLeilaoTest {
 
 		assertEquals(0, encerradorDeLeilao.getTotalEncerrados());
 		
-		// n é possivel mockar um method static
-		assertEquals("teste",daoFalso.teste());
-		
 	}
 
 }
